@@ -11,12 +11,12 @@ class LLMInterface:
     def __init__(self):
         api_key = os.getenv('GEMINI_API_KEY')
         if api_key:
-            genai.configure(api_key=api_key)
-            self.model = genai.GenerativeModel(
+            genai.configure(api_key=api_key)  # type: ignore
+            self.model = genai.GenerativeModel(  # type: ignore
                 model_name='gemini-1.5-flash',
                 tools=self.define_tools()
             )
-            self.chat = self.model.start_chat(enable_automatic_function_calling=True)
+            self.chat = self.model.start_chat(enable_automatic_function_calling=True)  # type: ignore
         else:
             self.model = None
             self.chat = None

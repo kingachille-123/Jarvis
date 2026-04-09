@@ -45,7 +45,7 @@ class VoiceInterface:
             self.recognizer.adjust_for_ambient_noise(source)
             audio = self.recognizer.listen(source)
             try:
-                text = self.recognizer.recognize_google(audio).lower()
+                text = self.recognizer.recognize_google(audio).lower()  # type: ignore
                 if self.wake_word in text:
                     return True
             except sr.UnknownValueError:
@@ -63,7 +63,7 @@ class VoiceInterface:
             self.recognizer.adjust_for_ambient_noise(source)
             audio = self.recognizer.listen(source)
             try:
-                text = self.recognizer.recognize_google(audio)
+                text = self.recognizer.recognize_google(audio)  # type: ignore
                 print(f"You said: {text}")
                 return text
             except sr.UnknownValueError:
