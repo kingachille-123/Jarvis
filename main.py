@@ -13,11 +13,11 @@ from jarvis.llm import LLMInterface
 from jarvis.automation import AutomationTools
 
 def main():
-    voice = VoiceInterface(use_voice=False)  # Set to True for voice mode
+    voice = VoiceInterface(use_voice=True)  # Set to False for text mode
     llm = LLMInterface()
     automation = AutomationTools()
 
-    print("J.A.R.V.I.S. (Gemini Edition) is ready. Press Enter to start.")
+    print("J.A.R.V.I.S. (Gemini Edition) is ready. Say the wake word to start.")
 
     while True:
         if voice.listen_for_wake_word():

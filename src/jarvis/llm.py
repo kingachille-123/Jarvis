@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore", message="All support for the `google.generativeai` package has ended")
+
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
